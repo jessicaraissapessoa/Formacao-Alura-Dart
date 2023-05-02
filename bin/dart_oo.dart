@@ -23,6 +23,9 @@ void main() {
   mandioca1.cozinhar();
   limao1.fazerSuco();
 
+  banana1.separarIngredientes();
+  macadamia1.fazerMassa();
+
 }
 
 
@@ -58,7 +61,7 @@ int funcQuantosDiasMadura(int dias){
 
 
 
-class Alimento implements Bolo {
+class Alimento {
 
   String nome;
   double peso;
@@ -72,7 +75,7 @@ class Alimento implements Bolo {
 
 }
 
-class Fruta extends Alimento{
+class Fruta extends Alimento implements Bolo{
 
   String sabor;
   int diasDesdeColheita;
@@ -89,9 +92,24 @@ class Fruta extends Alimento{
     print('Você fez um ótimo suco de $nome');
   }
 
+  @override
+  void separarIngredientes() {
+    print('Catar $nome');
+  }
+
+  @override
+  void fazerMassa() {
+    print('Misturar a fruta com farinha, açúcar, ovos...');
+  }
+
+  @override
+  void assar() {
+    print('Colocar no forno');
+  }
+
 }
 
-class Legumes extends Alimento{
+class Legumes extends Alimento implements Bolo{
 
   bool isPrecisaCozinhar;
 
@@ -106,8 +124,8 @@ class Legumes extends Alimento{
   }
 
   @override
-  void assar() {
-    // TODO: implement assar
+  void separarIngredientes() {
+    // TODO: implement separarIngredientes
   }
 
   @override
@@ -116,10 +134,9 @@ class Legumes extends Alimento{
   }
 
   @override
-  void separarIngredientes() {
-    // TODO: implement separarIngredientes
+  void assar() {
+    // TODO: implement assar
   }
-
 
 }
 
@@ -144,6 +161,13 @@ class Nozes extends Fruta{
   double porcentagemOleoNatural;
 
   Nozes(String nome, double peso, String cor, String sabor, int diasDesdeColheita, this.porcentagemOleoNatural) : super(nome, peso, cor, sabor, diasDesdeColheita);
+
+  @override //o que fica abaixo dele é acessado e sobrescrito
+  void fazerMassa(){
+    print('Tirar a casca');
+    super.fazerMassa(); //chama fazerMassa no super (Fruta)
+    //acrescenta o print e depois executa o que há em fazerMassa
+  }
 
 }
 
