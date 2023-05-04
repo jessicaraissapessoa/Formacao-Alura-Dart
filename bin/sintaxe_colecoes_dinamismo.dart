@@ -3,8 +3,12 @@ void main() {
   escolherMeioTransporte(Transporte.carro);
 
   Set<String> registrosVisitados = <String>{};
-  registrosVisitados = registrarDestinos("São Paulo"); //registrosVisitados recebe o que for inserido por registrarDestinos
-  print(registrarDestinos('Rio de Janeiro'));
+
+  registrosVisitados = registrarDestinos("São Paulo", registrosVisitados); //registrosVisitados recebe o que for inserido por registrarDestinos
+  // atualiza registrosVisitados com registrarDestinos
+  // ("São Paulo", registrosVisitados) > quando chama registrarDestinos ele passa "São Paulo" como argumento para parâmetro destino e registrosVisitados para banco
+
+  print(registrosVisitados); //agora printa todos os destinos visitados
 
 }
 
@@ -36,8 +40,8 @@ enum Transporte {
   skate
 }
 
-Set<String> registrarDestinos(String destino) {
+Set<String> registrarDestinos(String destino, Set<String> banco) {
 
-  registrosVisitados.add(destino);
-  return registrosVisitados;
+  banco.add(destino);
+  return banco;
 }
