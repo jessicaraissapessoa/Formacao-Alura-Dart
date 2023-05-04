@@ -2,6 +2,10 @@ void main() {
 
   escolherMeioTransporte(Transporte.carro);
 
+  Set<String> registrosVisitados = <String>{};
+  registrosVisitados = registrarDestinos("São Paulo"); //registrosVisitados recebe o que for inserido por registrarDestinos
+  print(registrarDestinos('Rio de Janeiro'));
+
 }
 
 
@@ -30,4 +34,10 @@ enum Transporte {
   bike,
   onibus,
   skate
+}
+
+Set<String> registrarDestinos(String destino) {
+
+  registrosVisitados.add(destino);
+  return registrosVisitados;
 }
