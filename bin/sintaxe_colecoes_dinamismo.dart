@@ -8,6 +8,12 @@ void main() {
   // atualiza registrosVisitados com registrarDestinos
   // ("São Paulo", registrosVisitados) > quando chama registrarDestinos ele passa "São Paulo" como argumento para parâmetro destino e registrosVisitados para banco
 
+  //adicionando mais destinos e repetição:
+  registrosVisitados = registrarDestinos("Recife", registrosVisitados);
+  registrosVisitados = registrarDestinos("Rio de Janeiro", registrosVisitados);
+  registrosVisitados = registrarDestinos("São Paulo", registrosVisitados);
+
+
   print(registrosVisitados); //agora printa todos os destinos visitados
 
 }
@@ -41,7 +47,7 @@ enum Transporte {
 }
 
 Set<String> registrarDestinos(String destino, Set<String> banco) {
-
+  //adiciona destino no banco e retorna ele atualizado
   banco.add(destino);
   return banco;
 }
