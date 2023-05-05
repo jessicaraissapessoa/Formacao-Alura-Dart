@@ -4,17 +4,16 @@ void main() {
 
   Set<String> registrosVisitados = <String>{};
 
-  registrosVisitados = registrarDestinos("São Paulo", registrosVisitados); //registrosVisitados recebe o que for inserido por registrarDestinos
-  // atualiza registrosVisitados com registrarDestinos
-  // ("São Paulo", registrosVisitados) > quando chama registrarDestinos ele passa "São Paulo" como argumento para parâmetro destino e registrosVisitados para banco
-
-  //adicionando mais destinos e repetição:
-  registrosVisitados = registrarDestinos("Recife", registrosVisitados);
-  registrosVisitados = registrarDestinos("Rio de Janeiro", registrosVisitados);
   registrosVisitados = registrarDestinos("São Paulo", registrosVisitados);
 
+  Map<String, double> registrarPrecos = {};
 
-  print(registrosVisitados); //agora printa todos os destinos visitados
+  registrarPrecos['São Paulo'] = 1200; // [chave] = informações associadas
+  registrarPrecos['Rio de Janeiro'] = 1500;
+
+  print(registrarPrecos); //printar todos
+  print('São Paulo'); //printar relativo a chave 'São Paulo'
+
 
 }
 

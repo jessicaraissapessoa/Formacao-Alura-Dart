@@ -60,7 +60,6 @@ int funcQuantosDiasMadura(int dias){
 }
 
 
-
 class Alimento {
 
   String nome;
