@@ -6,6 +6,9 @@ void main() {
 
   registrosVisitados = registrarDestinos("São Paulo", registrosVisitados);
 
+
+  //MAPS
+
   Map<String, double> registrarPrecos = {};
 
   registrarPrecos['São Paulo'] = 1200; // [chave] = informações associadas
@@ -13,6 +16,16 @@ void main() {
 
   print(registrarPrecos); //printar todos
   print('São Paulo'); //printar relativo a chave 'São Paulo'
+
+  //atualizando uma chave / substituindo
+  registrarPrecos['São Paulo'] = 1900;
+
+  //deletando uma chave
+  registrarPrecos.remove('Rio de Janeiro');
+
+  //O padrão, porque a pessoa pode não lembrar exatamente, por exemplo
+  Map<String, dynamic> registrarPrecos2 = {};
+  registrarPrecos2['São Paulo'] = 'Muito caro!';
 
 
 }
