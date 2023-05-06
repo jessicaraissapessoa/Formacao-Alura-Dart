@@ -28,6 +28,13 @@ void main() {
   registrarPrecos2['São Paulo'] = 'Muito caro!';
 
 
+  Viagem viagemHoje = Viagem(); //Inicializada com objeto do tipo Viagem
+  viagemHoje.printCodigo();
+  Viagem.codigoTrabalho;
+  print(Viagem.codigoTrabalho);
+  print(viagemHoje.printCodigo());
+
+
 }
 
 
@@ -62,4 +69,15 @@ Set<String> registrarDestinos(String destino, Set<String> banco) {
   //adiciona destino no banco e retorna ele atualizado
   banco.add(destino);
   return banco;
+}
+
+//"Variável estática ou dinâmica?"
+class Viagem {
+  static String codigoTrabalho = "ABCDE";
+  double dinheiro = 0; //ou usa construtor ou inicializa com zero
+
+  printCodigo() {
+    return codigoTrabalho;
+  }
+
 }
