@@ -9,6 +9,8 @@ class Viagem {
   Set<String> registrosVisitados = <String>{}; //É como se fosse um banco de registros de locais visitados
   Map<String, dynamic> registrarPrecos = {}; //Banco de registro dos preços dos locais visitados
 
+  int _totalLocaisVisitados = 5614561546; //Variável privada
+
   //Construtor usando parâmetro nomeável:
   Viagem({required this.locomocao});
 
@@ -37,10 +39,19 @@ class Viagem {
 
   void visitar (String localVisita) { //Função de registrar viagens
     registrosVisitados.add(localVisita);
+    _totalLocaisVisitados += 1;
   }
 
   void registrarPrecoVisita(String local, dynamic preco) {
     registrarPrecos[local] = preco;
+  }
+
+  int get consultarTotalLocaisVisitados {
+    return _totalLocaisVisitados;
+  }
+
+  void set alterarLocaisVisitados (int novaQnt) {
+    _totalLocaisVisitados = novaQnt;
   }
 
 }
