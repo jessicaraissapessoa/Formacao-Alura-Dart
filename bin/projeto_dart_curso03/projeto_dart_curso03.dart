@@ -1,5 +1,3 @@
-/* REFATORADO NO DIRETÓRIO 'projeto_dart_curso03'
-
 void main() {
 
   escolherMeioTransporte(Transporte.carro);
@@ -83,5 +81,3 @@ class Viagem {
   }
 
 }
-
- */
