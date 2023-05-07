@@ -7,6 +7,7 @@ void main() {
 
   print(viagemMaio.consultarTotalLocaisVisitados);
 
-
+  viagemMaio.alterarLocaisVisitados = 100; //forma de passar valor com setter
+  print(viagemMaio.consultarTotalLocaisVisitados);
 
 }

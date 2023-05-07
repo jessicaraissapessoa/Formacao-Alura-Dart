@@ -38,6 +38,7 @@ class Viagem {
   }
 
   void visitar (String localVisita) { //Função de registrar viagens
+
     registrosVisitados.add(localVisita);
     _totalLocaisVisitados += 1;
   }
@@ -51,7 +52,12 @@ class Viagem {
   }
 
   void set alterarLocaisVisitados (int novaQnt) {
-    _totalLocaisVisitados = novaQnt;
+
+    if(novaQnt < 10) {
+      _totalLocaisVisitados = novaQnt;
+    } else {
+      print('Não é possível!');
+    }
   }
 
 }
