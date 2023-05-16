@@ -12,8 +12,11 @@ void functionOne() {
   //tratando a exceção ao redor da functionTwo:
   try {
     functionTwo();
-  } on FormatException {
+  } on FormatException catch(e) {
     print('Foi capturada dentro da FunctionOne');
+    print(e.message); //Invalid double
+    print(e.source); //Not a number
+    print(e.toString()); //FormatException: Invalid double / not a number
   }
 
   print('Finished F01');
