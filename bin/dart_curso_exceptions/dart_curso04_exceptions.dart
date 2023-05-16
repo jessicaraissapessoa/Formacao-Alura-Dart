@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void main() {
 
   print('Started Main');
@@ -13,10 +15,17 @@ void functionOne() {
   try {
     functionTwo();
   } on FormatException catch(e) {
-    print('Foi capturada dentro da FunctionOne');
-    print(e.message); //Invalid double
-    print(e.source); //Not a number
-    print(e.toString()); //FormatException: Invalid double / not a number
+      print('Foi capturada dentro da FunctionOne');
+      print(e.message); //Invalid double
+      print(e.source); //Not a number
+      print(e.toString()); //FormatException: Invalid double / not a number
+  } on IOException catch(e) {
+      print("Uma IOException foi encontrada");
+      e.toString();
+  } /*on HttpException catch(e) { //cinza porque é subtipo de IOException, que já trata a exceção, que não chegará a HttpException
+      e.toString();
+  } */ on Exception catch(e) {
+    print(e.toString());
   }
 
   print('Finished F01');
