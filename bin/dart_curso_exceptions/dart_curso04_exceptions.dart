@@ -13,9 +13,10 @@ void functionOne() {
 
   try {
     functionTwo();
-  } catch (exception, stackTrace) {
+  } on FormatException catch (exception, stackTrace) {
     print(exception);
     print(stackTrace);
+    rethrow;
   } finally {
     print('Chegou no Finally');
   }
